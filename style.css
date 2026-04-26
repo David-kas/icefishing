@@ -1,0 +1,698 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0c1a2d 0%, #1a1a2e 100%);
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Хедер */
+header {
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #00f3ff;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #00f3ff, #0088ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #00f3ff, #0088ff);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+}
+
+.breadcrumbs {
+    margin-top: 24px;
+    color: #9fc4df;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #00f3ff;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Неоновые кнопки */
+.neon-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(90deg, #00f3ff, #0088ff);
+    color: #0c1a2d;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.neon-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.8);
+    color: #0c1a2d;
+}
+
+.neon-button-secondary {
+    background: linear-gradient(90deg, #ff00ff, #ff0088);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.neon-button-secondary:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+}
+
+/* Главный баннер */
+.main-banner {
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9));
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 20px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.main-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(0, 243, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.main-banner h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00f3ff, #0088ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.main-banner > p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+/* Контейнер для видео */
+.video-container {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 243, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(26, 26, 46, 0.9));
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder:hover {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(10, 25, 47, 0.9));
+}
+
+.play-icon {
+    font-size: 70px;
+    color: #00f3ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.video-placeholder:hover .play-icon {
+    transform: scale(1.1);
+}
+
+.video-placeholder p {
+    font-size: 18px;
+    font-weight: 600;
+    max-width: 80%;
+    text-align: center;
+}
+
+.video-info {
+    padding: 20px;
+    background: rgba(0, 243, 255, 0.05);
+    border-top: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.video-info p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Кнопки баннера */
+.banner-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.banner-buttons .neon-button {
+    min-width: 200px;
+}
+
+/* Блоки с текстом */
+.content-block {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px 0;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.content-block h2 {
+    color: #00f3ff;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.content-block h3 {
+    color: #ff00ff;
+    margin: 20px 0 15px 0;
+    font-size: 24px;
+}
+
+.content-block ul,
+.content-block ol {
+    margin: 10px 0 20px 22px;
+}
+
+.content-block table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.content-block th,
+.content-block td {
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 12px;
+    text-align: left;
+}
+
+.content-block th {
+    background: rgba(0, 243, 255, 0.12);
+}
+
+/* Как играть блок */
+.how-to-play {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.step {
+    background: rgba(0, 243, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 243, 255, 0.2);
+}
+
+.step-number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00f3ff, #0088ff);
+    border-radius: 50%;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0c1a2d;
+}
+
+/* Видео туториалы */
+.video-tutorials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tutorial-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutorial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.2);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tutorial-item:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 243, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0c1a2d;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.tutorial-item:hover .play-overlay {
+    background: #00f3ff;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.tutorial-item h3 {
+    padding: 20px 20px 10px;
+    margin: 0;
+    color: #00f3ff;
+    font-size: 20px;
+}
+
+.tutorial-item p {
+    padding: 0 20px 20px;
+    margin: 0;
+    opacity: 0.8;
+    font-size: 16px;
+}
+
+/* FAQ */
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #00f3ff;
+    transition: background 0.3s ease;
+}
+
+.faq-item:hover {
+    background: rgba(0, 243, 255, 0.05);
+}
+
+.faq-question {
+    color: #00f3ff;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Промокод блок */
+.promo-container {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(255, 0, 255, 0.1));
+    border-radius: 20px;
+    margin: 40px 0;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.promo-code-display {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00f3ff;
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 30px auto;
+    max-width: 500px;
+    color: #00f3ff;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    word-break: break-all;
+}
+
+.copy-button {
+    background: linear-gradient(90deg, #ff00ff, #ff0088);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.copy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+}
+
+/* Футер */
+footer {
+    background: rgba(10, 25, 47, 0.95);
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 2px solid #00f3ff;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #00f3ff;
+}
+
+.copyright {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 25, 47, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid #00f3ff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-size: 18px;
+    }
+    
+    .main-banner {
+        padding: 40px 20px;
+    }
+    
+    .main-banner h1 {
+        font-size: 32px;
+    }
+    
+    .main-banner > p {
+        font-size: 18px;
+    }
+    
+    .content-block {
+        padding: 25px;
+    }
+    
+    .content-block h2 {
+        font-size: 26px;
+    }
+    
+    .promo-code-display {
+        font-size: 22px;
+        padding: 20px;
+        letter-spacing: 2px;
+    }
+    
+    .how-to-play {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-buttons {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .banner-buttons .neon-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .video-tutorials {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-info p {
+        font-size: 14px;
+    }
+
+    .content-block table,
+    .content-block thead,
+    .content-block tbody,
+    .content-block th,
+    .content-block td,
+    .content-block tr {
+        display: block;
+    }
+
+    .content-block th {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 22px;
+    }
+    
+    .neon-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+    
+    .promo-code-display {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    
+    .content-block {
+        padding: 20px;
+    }
+    
+    .main-banner h1 {
+        font-size: 28px;
+    }
+    
+    .video-placeholder p {
+        font-size: 16px;
+    }
+    
+    .play-icon {
+        font-size: 50px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
