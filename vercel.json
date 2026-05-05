@@ -1,8 +1,13 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "destination": "/ru/",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
-      "destination": "/",
+      "destination": "/ru/",
       "permanent": true
     },
     {
