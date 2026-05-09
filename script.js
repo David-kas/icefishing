@@ -24,9 +24,25 @@ function updateLanguageSwitcherLabel() {
   if (!label) return;
   const lang = detectLanguage();
   if (lang === 'en') label.textContent = 'Choose language:';
-  else if (lang === 'kz') label.textContent = 'Til tandau:';
-  else if (lang === 'uz') label.textContent = 'Tilni tanlash:';
-  else label.textContent = 'Vyberite yazyk:';
+  else if (lang === 'kz') label.textContent = 'Тілді таңдаңыз:';
+  else if (lang === 'uz') label.textContent = 'Tilni tanlang:';
+  else label.textContent = 'Выберите язык:';
+}
+
+/** Uzbek Latin: modifier letter apostrophe U+02BC (oʻ) */
+const PLAY_BY_LANG = {
+  ru: 'Играть',
+  en: 'Play',
+  kz: 'Ойнау',
+  uz: 'O\u02BCynash',
+};
+
+function updateAffiliatePlayButtons() {
+  const lang = detectLanguage();
+  const text = PLAY_BY_LANG[lang] || PLAY_BY_LANG.ru;
+  document.querySelectorAll('[data-affiliate-link]').forEach((el) => {
+    el.textContent = text;
+  });
 }
 
 function normalizeHeaderLanguageSwitcher() {
@@ -48,10 +64,10 @@ function normalizeHeaderLanguageSwitcher() {
   }
 
   const labels = {
-    ru: '🇷🇺 RU',
-    en: '🇬🇧 EN',
-    kz: '🇰🇿 KZ',
-    uz: '🇺🇿 UZ',
+    ru: 'Русский',
+    en: 'English',
+    kz: 'Қазақша',
+    uz: 'O\u02BCzbekcha',
   };
 
   const switcher = document.createElement('div');
@@ -117,5 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
   normalizeHeaderLanguageSwitcher();
   updateLanguageSwitcherLabel();
   applyAffiliateLinks();
+  updateAffiliatePlayButtons();
   initMobileMenu();
 });

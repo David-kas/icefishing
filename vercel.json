@@ -1,15 +1,7 @@
 {
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "redirects": [
-    {
-      "source": "/",
-      "destination": "/ru/",
-      "permanent": true
-    },
-    {
-      "source": "/index.html",
-      "destination": "/ru/",
-      "permanent": true
-    },
     {
       "source": "/:path*",
       "has": [
