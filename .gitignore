@@ -1,0 +1,17 @@
+# Dependencies (never commit — Vercel/GitHub Actions run npm install)
+node_modules/
+
+# Next.js (if used locally)
+.next/
+out/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs / debug
+npm-debug.log*
+.env
+.env*.local
