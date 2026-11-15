@@ -1,8 +1,8 @@
 ﻿const AFFILIATE_LINKS = {
-  ru: 'https://pdlinkfortysix.xyz/click/699ee9926bcc631b4e19a89d/4798/16899/subaccount',
-  en: 'https://pdlinkfortysix.xyz/click/699ee9926bcc631b4e19a89d/4798/16899/subaccount',
-  kz: 'https://pdlinkfortysix.xyz/click/699f10d76bcc631bb907d95d/4799/16899/subaccount',
-  uz: 'https://pdlinkfortysix.xyz/click/699f10d76bcc631bb907d95e/4800/16899/subaccount'
+  ru: 'https://h0xhaw0za1kg7e.xyz/click/6979c7c96bcc6364c87500ce/7/16899/subaccount',
+  en: 'https://h0xhaw0za1kg7e.xyz/click/6979c7c96bcc6364c87500ce/7/16899/subaccount',
+  kz: 'https://h0xhaw0za1kg7e.xyz/click/6979c7c96bcc6364c87500ce/7/16899/subaccount',
+  uz: 'https://h0xhaw0za1kg7e.xyz/click/6979c7c96bcc6364c87500ce/7/16899/subaccount'
 };
 function detectLanguage() {
   const path = window.location.pathname.toLowerCase();
